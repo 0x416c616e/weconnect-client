@@ -110,7 +110,7 @@ const Login = ({ classes }) => {
         data.person.personId = data.person.id;    // Initialize legacy (redundant) 'personId' field, which is not in the database
       }
       setAppContextValue('authenticatedPerson', data.person);
-      queryClient.invalidateQueries('get-auth');
+      queryClient.invalidateQueries({ queryKey: ['get-auth'] });
       if (data.emailVerified) {
         passwordFldRef.current = '';   // Blank the email field after signing in
         setWarningLine('');
@@ -181,7 +181,6 @@ const Login = ({ classes }) => {
     } else {
       setWarningLine('');
       setSuccessLine('You are signed out');
-      mutateLogout();
     }
   };
 

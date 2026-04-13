@@ -184,3 +184,4 @@ tests/browserstack*/config/browserstack.config.js
 tests/browserstack*/capabilities/mobile.json
 tests/browserstack*/screenshots/
 storybook-static/
+claude_help/
